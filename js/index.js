@@ -44,8 +44,13 @@ function createUserEl(user) {
   cardBody.classList.add("card-body");
   card.appendChild(cardBody);
 
+  const linkWrapper = document.createElement("a");
+  linkWrapper.setAttribute("href", user.html_url);
+  linkWrapper.setAttribute("target", "_blank");
+  linkWrapper.textContent = user.login;
+
   const cardTitle = document.createElement("h5");
-  cardTitle.textContent = user.login;
+  cardTitle.appendChild(linkWrapper);
 
   const button = document.createElement("button");
   button.textContent = "Show Repositories";
