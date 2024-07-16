@@ -19,6 +19,7 @@ formEl.addEventListener("submit", (event) => {
     .then((data) => {
       createUserEls(data.items);
       updateUserListEl();
+      clearRepoList();
     });
 });
 
@@ -138,4 +139,8 @@ function updateRepoListEl() {
 
 function scrollViewToRepoList() {
   repoListEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function clearRepoList() {
+  repoListEl.innerHTML = null;
 }
